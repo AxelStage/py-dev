@@ -1,6 +1,6 @@
 #!python3
 """
-    Python app for regular, strictly convex polygons
+    Python module for regular, strictly convex polygons
 """
 
 import math
