@@ -1,3 +1,19 @@
+"""
+Encrypt and decrypt messages using the Caesar cipher.
+A mono alphabetic substitution cipher where each letter
+is replaced by another letter in the alphabet.
+
+Classes:
+    None
+
+Functions:
+    encode_message(str, int)
+    decode_message(str, int)
+
+Notes:
+    Capital letters are not maintained after encoding!
+"""
+
 # preparations
 alphabet = [
     "a",
@@ -27,11 +43,10 @@ alphabet = [
     "y",
     "z",
 ]
-# alphabet = ["a", "b", "c"]
-running = True
 
-# functions
+
 def encode_message(message, offset):
+    """Encodes any alphabet characters string by a numeric offset"""
 
     encoded_message = ""
 
@@ -53,6 +68,7 @@ def encode_message(message, offset):
 
 
 def decode_message(message, offset):
+    """Decodes an encoded message by a known numeric offset"""
 
     decoded_message = ""
 
@@ -73,22 +89,25 @@ def decode_message(message, offset):
 
     print(decoded_message)
 
+def main(running=True):
+    """main program logic"""
 
-# program logic
-while running:
-    # user input
-    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-    text = input("Type your message:\n").lower()
-    shift = int(input("Type the shift number:\n"))
+    while running:
+        direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+        text = input("Type your message:\n").lower()
+        shift = int(input("Type the shift number:\n"))
 
-    if direction == "encode":
-        encode_message(text, shift)
-    elif direction == "decode":
-        decode_message(text, shift)
+        if direction == "encode":
+            encode_message(text, shift)
+        elif direction == "decode":
+            decode_message(text, shift)
 
-    repeat = input(
-        "Run again? Type y for yes or press any other button to exit.\n"
-    ).lower()
+        repeat = input(
+            "Run again? Type y for yes or press any other button to exit.\n"
+        ).lower()
 
-    if repeat != "y":
-        running = False
+        if repeat != "y":
+            running = False
+
+if __name__ == "__main__":
+    main()

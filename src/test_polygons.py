@@ -1,5 +1,5 @@
 """
-    testing app module
+    testing Polygons module
 """
 import pytest
 import math
